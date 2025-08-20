@@ -662,24 +662,24 @@
             return (
                 <div className="container">
                     <div className="header">
-                        <h1>🚀 Smart Payment Insights Engine</h1>
+                        <h1>Smart Payment Insights Engine</h1>
                         <p>Real-time payment analytics with functional programming & anomaly detection</p>
                     </div>
 
                     <div className="controls">
                         <button onClick={generateMoreData} disabled={isGenerating}>
-                            {isGenerating ? '⏳ Generating...' : '📊 Generate More Data'}
+                            {isGenerating ? 'Generating...' : 'Generate More Data'}
                         </button>
-                        <button onClick={clearData}>🗑️ Clear Data</button>
+                        <button onClick={clearData}>Clear Data</button>
                         <button onClick={() => setTransactions(generateBatchTransactions(200, 48))}>
-                            🔄 Reset Data
+                            Reset Data
                         </button>
                     </div>
 
                     {/* Metrics Overview */}
                     <div className="card">
                         <div className="card-header">
-                            <h3 className="card-title">📈 Real-time Metrics</h3>
+                            <h3 className="card-title">Real-time Metrics</h3>
                         </div>
                         <div className="metrics">
                             <div className="metric">
@@ -709,7 +709,7 @@
                         {/* Transaction Volume Chart */}
                         <div className="card">
                             <div className="card-header">
-                                <h3 className="card-title">📊 Transaction Volume</h3>
+                                <h3 className="card-title">Transaction Volume</h3>
                             </div>
                             <div className="chart-container">
                                 <LineChart 
@@ -726,7 +726,7 @@
                         {/* Status Distribution */}
                         <div className="card">
                             <div className="card-header">
-                                <h3 className="card-title">🎯 Status Distribution</h3>
+                                <h3 className="card-title">Status Distribution</h3>
                             </div>
                             <div className="chart-container">
                                 <PieChart data={statusDistribution} />
@@ -736,20 +736,20 @@
                         {/* Anomaly Detection */}
                         <div className="card">
                             <div className="card-header">
-                                <h3 className="card-title">🚨 Anomaly Detection</h3>
+                                <h3 className="card-title">Anomaly Detection</h3>
                             </div>
                             {anomalies.length > 0 ? (
                                 anomalies.map((anomaly, index) => (
                                     <div key={index} className="anomaly-alert">
                                         <div className="alert-title">
-                                            {anomaly.severity === 'HIGH' ? '🔴' : '🟡'} {anomaly.type}
+                                            [{anomaly.severity}] {anomaly.type}
                                         </div>
                                         <div>{anomaly.message}</div>
                                     </div>
                                 ))
                             ) : (
                                 <div style={{ textAlign: 'center', color: '#64748b' }}>
-                                    ✅ No anomalies detected
+                                    No anomalies detected
                                 </div>
                             )}
                         </div>
@@ -757,13 +757,13 @@
                         {/* Self-Healing Suggestions */}
                         <div className="card">
                             <div className="card-header">
-                                <h3 className="card-title">🛠️ AI Suggestions</h3>
+                                <h3 className="card-title">AI Suggestions</h3>
                             </div>
                             {suggestions.length > 0 ? (
                                 suggestions.map((suggestion, index) => (
                                     <div key={index} className="suggestion">
                                         <div className="suggestion-title">
-                                            {suggestion.priority === 'HIGH' ? '🔥' : '💡'} {suggestion.type}
+                                            [{suggestion.priority}] {suggestion.type}
                                         </div>
                                         <div>{suggestion.message}</div>
                                         <small style={{ color: '#666' }}>{suggestion.action}</small>
@@ -771,7 +771,7 @@
                                 ))
                             ) : (
                                 <div style={{ textAlign: 'center', color: '#64748b' }}>
-                                    ✅ System running optimally
+                                    System running optimally
                                 </div>
                             )}
                         </div>
@@ -780,7 +780,7 @@
                     {/* DSL Rule Engine */}
                     <div className="rules-engine">
                         <div className="card-header">
-                            <h3 className="card-title">⚙️ DSL Rule Engine</h3>
+                            <h3 className="card-title">DSL Rule Engine</h3>
                             <span style={{ color: '#64748b' }}>
                                 {ruleResults.length} rules triggered
                             </span>
@@ -823,7 +823,7 @@
                     {/* Recent Transactions Log */}
                     <div className="card" style={{ marginTop: '20px' }}>
                         <div className="card-header">
-                            <h3 className="card-title">📝 Recent Transactions</h3>
+                            <h3 className="card-title">Recent Transactions</h3>
                         </div>
                         <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
                             {transactions.slice(-10).reverse().map(tx => (
